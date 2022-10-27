@@ -28,37 +28,37 @@ app.use(express.json());
 app.get("/about/all", about.getAbouts);
 app.delete("/about/delete/:id", about.deleteAbout);
 app.post("/about/create", about.addAbout);
-app.post("/about/update", about.getAboutUpdate);
+app.post("/about/update/:id", about.getAboutUpdate);
 
 app.get("/education/all", education.getEducations);
 app.delete("/education/delete/:id", education.deleteEducations);
 app.post("/education/create", education.addEducations);
-app.post("/education/update", education.getEducationsUpdate);
+app.post("/education/update/:id", education.getEducationsUpdate);
 
 app.get("/experience/all", experience.getExperiences);
 app.delete("/experience/delete/:id", experience.deleteExperiences);
 app.post("/experience/create", experience.addExperiences);
-app.post("/experience/update", experience.getExperiencesUpdate);
+app.post("/experience/update/:id", experience.getExperiencesUpdate);
 
 app.get("/view/all", view.getViews);
 app.delete("/view/delete/:id", view.deleteViews);
 app.post("/view/create", view.addViews);
-app.post("/view/update", view.getViewsUpdate);
+app.post("/view/update/:id", view.getViewsUpdate);
 
 app.get("/portfolio/all", portfolio.getPortfolios);
 app.delete("/portfolio/delete/:id", portfolio.deletePortfolios);
 app.post("/portfolio/create", portfolio.addPortfolios);
-app.post("/portfolio/update", portfolio.getPortfoliosUpdate);
+app.post("/portfolio/update/:id", portfolio.getPortfoliosUpdate);
 
 app.get("/skill/all", skill.getSkills);
 app.delete("/skill/delete/:id", skill.deleteSkills);
 app.post("/skill/create", skill.addSkills);
-app.post("/skill/update", skill.getSkillsUpdate);
+app.post("/skill/update/:id", skill.getSkillsUpdate);
 
 app.get("/testimonial/all", testimonial.getTestimonials);
 app.delete("/testimonial/delete/:id", testimonial.deleteTestimonials);
 app.post("/testimonial/create", testimonial.addTestimonials);
-app.post("/testimonial/update", testimonial.getTestimonialsUpdate);
+app.post("/testimonial/update/:id", testimonial.getTestimonialsUpdate);
 
 mongoConnect(() => {
   app.listen(process.env.PORT || 8000, () => console.log("Server Started!"));

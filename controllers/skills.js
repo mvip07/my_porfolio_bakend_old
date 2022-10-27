@@ -22,9 +22,9 @@ exports.addSkills = (req, res) => {
 
 exports.getSkillsUpdate = (req, res) => {
     const db = getDb();
-    const { skillsName, skillsPercentage, id} = req.body;
+    const { skillsName, skillsPercentage } = req.body;
         return db.collection("skills").updateOne(
-            { _id: ObjectId(id) },
+            { _id: ObjectId(req.params.id) },
             { $set: {
                 "skillsName": skillsName,
                 "skillsPercentage": skillsPercentage,

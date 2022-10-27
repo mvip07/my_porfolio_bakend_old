@@ -22,9 +22,9 @@ exports.addEducations = (req, res) => {
 
 exports.getEducationsUpdate = (req, res) => {
     const db = getDb();
-    const { educationName, educationYear, educationWhere, description, id} = req.body;
+    const { educationName, educationYear, educationWhere, description } = req.body;
         return db.collection("educations").updateOne(
-            { _id: ObjectId(id) },
+            { _id: ObjectId(req.params.id) },
             { $set: {
                 "educationName": educationName,
                 "educationYear": educationYear,

@@ -22,9 +22,9 @@ exports.addPortfolios = (req, res) => {
 
 exports.getPortfoliosUpdate = (req, res) => {
     const db = getDb();
-    const { category, githubUrl, serverUrl, image, id} = req.body;
+    const { category, githubUrl, serverUrl, image} = req.body;
         return db.collection("portfolios").updateOne(
-            { _id: ObjectId(id) },
+            { _id: ObjectId(req.params.id) },
             { $set: {
                 "category": category,
                 "githubUrl": githubUrl,

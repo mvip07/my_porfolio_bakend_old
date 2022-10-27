@@ -22,9 +22,9 @@ exports.addViews = (req, res) => {
 
 exports.getViewsUpdate = (req, res) => {
     const db = getDb();
-    const { ip, id} = req.body;
+    const { ip } = req.body;
         return db.collection("views").updateOne(
-            { _id: ObjectId(id) },
+            { _id: ObjectId(req.params.id) },
             { $set: {
                 "ip": ip,
             } },

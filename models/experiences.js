@@ -1,24 +1,24 @@
 const getDb = require("../util/db").getDb;
 class Experince {
-    constructor(experinceName, experinceYear, experinceWhere, description) {
+    constructor(experinceName, experinceYear, experienceWhere, description) {
         this.experinceName = experinceName;
         this.experinceYear = experinceYear;
-        this.experincesWhere = experinceWhere;
+        this.experienceWhere = experienceWhere;
         this.description = description;
         this.createDate = new Date();
     }
 
     static getExperince() {
         const db = getDb();
-        return db.collection("experinces").find({}).toArray().then(experinces => {
+        return db.collection("experiences").find({}).toArray().then(experinces => {
             return experinces.map(experince => {
                 return {
                     _id: experince._id,
-                    experinceName: experince.experinceName,
-                    experinceYear: experince.experinceYear,
-                    experinceWhere: experince.experinceWhere,
+                    experienceName: experince.experienceName,
+                    experienceYear: experince.experienceYear,
+                    experienceWhere: experince.experienceWhere,
                     description: experince.description,
-                    createDate: experince.createDate 
+                    createDate: experince.createDate
                 }
             })
         });
@@ -26,7 +26,7 @@ class Experince {
 
     addExperiences() {
         const db = getDb();
-        return db.collection("experinces").insertOne(this);
+        return db.collection("experiences").insertOne(this);
     }
 };
 

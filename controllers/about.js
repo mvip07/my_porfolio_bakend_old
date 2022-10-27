@@ -22,9 +22,9 @@ exports.addAbout = (req, res) => {
 
 exports.getAboutUpdate = (req, res) => {
     const db = getDb();
-    const { fullName, job, birthday, website, phone, city, age, degree, email, interesting, telegramLink, facabookLink, instagramLink, linkedinLink, description, image, id} = req.body;
+    const { fullName, job, birthday, website, phone, city, age, degree, email, interesting, telegramLink, facabookLink, instagramLink, linkedinLink, description, image } = req.body;
         return db.collection("about").updateOne(
-            { _id: ObjectId(id) },
+            { _id: ObjectId(req.params.id) },
             { $set: {
                 "fullName" : fullName,
                 "job": job,
@@ -54,7 +54,7 @@ exports.getAboutUpdate = (req, res) => {
 exports.deleteAbout = (req, res) => {
     const db = getDb();
     return db.collection("about")
-        .deleteOne({ _id: ObjectId(req.params.id) })
+        .deleteOne({ _id: ObjectId(req.params._id) })
         .then(() => res.status(200).json({ message: "You are cool!" }))
         .catch(() => res.status(500).json({ message: "You are not cool!" }));
 };

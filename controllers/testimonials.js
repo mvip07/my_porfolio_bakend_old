@@ -22,9 +22,9 @@ exports.addTestimonials = (req, res) => {
 
 exports.getTestimonialsUpdate = (req, res) => {
     const db = getDb();
-    const { name, email, subject, message, image, id} = req.body;
+    const { name, email, subject, message, image } = req.body;
         return db.collection("testimonials").updateOne(
-            { _id: ObjectId(id) },
+            { _id: ObjectId(req.params.id) },
             { $set: {
                 "name": name,
                 "email": email,
