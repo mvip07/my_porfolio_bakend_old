@@ -20,12 +20,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mirabzal-07/my-fortfolio"
+    "url": "git+https://github.com/mirabzal-07/my-portfolio"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mirabzal-07/my-fortfolio/issues"
+    "url": "https://github.com/mirabzal-07/my-portfolio/issues"
   },
-  "homepage": "https://github.com/mirabzal-07/my-fortfolio#readme"
+  "homepage": "https://github.com/mirabzal-07/my-portfolio#readme"
 }
